@@ -1,26 +1,45 @@
-# Disclaimer
+![img.png](doc/img/game-of-techs.png)
 
-The puzzle used for this kata is taken from Advent Of Code 2021 ([Day 2 - Part 2](https://adventofcode.com/2021/day/2)).
-All credits goes to AOC's team for their incredible work.
+# ⚔️Test && Commit || Revert ⚔️
 
-The TCR Utility Tool in this repository is Murex's one that can be found [here](https://github.com/murex/TCR).
+## Why ?
 
-![Autumn camp](img/autumn-camp-tcr.png)
+Although probably a bit challenging to use on real production code, we found TCR to be quite beneficial 
+when used as a learning and practicing tool on the katas that we use when doing software craftsmanship coaching.
 
-# Kata
+TCR enforces developing in baby steps, with a strong focus on always keeping the green light on tests. 
+Having a TCR tool feels a bit like having a coaching assistant constantly enforcing such practices!
 
-The goal of this kata is to allow people to get familiar with
-TCR ([Test && Commit || Revert](https://medium.com/@kentbeck_7670/test-commit-revert-870bbd756864)), and experience it in a safe context as a pair or mob.
+In addition, TCR improves working in small batches using atomic commits: every commit can go to production
+because tests are always green and features split.
+In day to day life, you can use the [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/) specification 
+to guide your commit workflow.
 
-### Prerequisites
+## How to ?
 
-* Your favorite IDE
-* SpecFlow plugin
-    * [VS2022](https://marketplace.visualstudio.com/items?itemName=TechTalkSpecFlowTeam.SpecFlowForVisualStudio2022)
-    * [Rider](https://plugins.jetbrains.com/plugin/15957-specflow-for-rider)
- * Cucumber plugin available [here](https://plugins.jetbrains.com/plugin/7212-cucumber-for-java)
+The goal of the kata is to make all acceptance tests pass following Test-Driven Development and using the TCR Utility
+Tool.
 
-### Story
+- install dependencies for the language of your choice
+- at the root of this project, run the tcr tool for the language as explained [here](doc/TCR.md)
+- resolves the kata:
+  - all acceptance tests are written in Gherkin and marked as skip
+  - implements solution using TDD
+  - when you think an acceptance tests is satisfied by the code, remove the skip tag
+  - if the acceptance test is green, do the same for next
+
+## Advices
+
+- Baby-steps. If you think you're going small, think smaller.
+- You should have TCR generating commits often, like every few minutes.
+- If you spend more too much time on an implementation, discard your changes and start with another approach.
+- The submarine's behavior is detailed in the summary.
+- Try to implement [pure functions](https://betterprogramming.pub/what-is-a-pure-function-3b4af9352f6f) for better
+  predictability.
+- Use acceptance tests to follow your progress.
+
+
+## Story
 
 You need to figure how to pilot this submarine.
 
@@ -70,7 +89,7 @@ Create a branch of your own so you don't push all your commits on the main branc
 Without going too much in detail, here's a little explanation on how the TCR Utility Tool works.
 
 The command must follow the following format, and be executed from the root directory:
-- .\tcr\\**OS**\tcr.exe -b .\\**language**\ -w .\\**language**\ -l **language**
+- .\tcr\\**OS**\tcr.exe -b .\\**language**\ -w .\\**language**\ -t **tool**
 
 ```shell
 // For Java
@@ -79,7 +98,7 @@ The command must follow the following format, and be executed from the root dire
 
 // For C#
 ./tcr/MacOs/tcr -b csharp/ -w csharp/ -l csharp
-.\tcr\Windows\tcr.exe -b .\csharp\ -w .\csharp\ -l csharp
+.\tcr\Windows\tcr.exe -b .\csharp\ -w .\csharp\ -t csharp
 
 // For typescript
 ./tcr/MacOs/tcr -b typescript -w typescript -t npm
@@ -125,12 +144,12 @@ Have fun!
 - Refactor the code like it's production code.
 - It **is** production code, remember?
 
-### Advices
+## Credits
 
-- Baby-steps. If you think you're going small, think smaller.
-- You should have TCR generating commits often, like every few minutes.
-- If you spend more too much time on an implementation, discard your changes and start with another approach.
-- The submarine's behavior is detailed in the summary.
-- Try to implement [pure functions](https://betterprogramming.pub/what-is-a-pure-function-3b4af9352f6f) for better
-  predictability.
-- Use acceptance tests to follow your progress.
+The puzzle used for this kata is taken from Advent Of Code 2021 ([Day 2 - Part 2](https://adventofcode.com/2021/day/2)).
+All credits goes to AOC's team for their incredible work.
+
+The TCR Utility Tool in this repository is Murex's one that can be found [here](https://github.com/murex/TCR).
+
+Initial version of this workshop by [Les tontons crafteurs](https://github.com/les-tontons-crafters/submarine-tcr)
+at [Software Craft Luxembourg's](https://www.meetup.com/software-craft-luxembourg/) autumn camp 2022
