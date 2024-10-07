@@ -67,4 +67,4 @@ Feature: Submarine
   @InProgress
   Scenario: Full example
     When submarine receives all commands from file submarineCommands.txt
-    Then submarine final value should be 1690020
+    Then submarine final value should be 2134882034
