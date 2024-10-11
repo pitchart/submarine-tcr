@@ -1,9 +1,8 @@
-import {Submarine} from "@submarine-domain/Submarine";
-
+import { Submarine } from "@submarine-domain/Submarine";
 
 describe("Submarine", () => {
-  const submarine = new Submarine()
+  const submarine = new Submarine();
   test("fake", () => {
-    expect(submarine).not.toBeNull()
+    expect(submarine).not.toBeNull();
   });
 });

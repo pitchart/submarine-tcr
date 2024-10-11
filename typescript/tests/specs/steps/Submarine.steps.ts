@@ -1,11 +1,9 @@
-import {autoBindSteps, loadFeature} from "jest-cucumber";
-import {subamrineSteps} from "../step-definitions/submarine-steps";
+import { autoBindSteps, loadFeature } from "jest-cucumber";
+import { submarineSteps } from "../step-definitions/submarine-steps";
 
-const feature = loadFeature('../features/submarine.feature', {
-    tagFilter: 'not @excluded',
-    loadRelativePath: true,
-})
+const feature = loadFeature("../features/submarine.feature", {
+  tagFilter: "not @excluded",
+  loadRelativePath: true,
+});
 
-autoBindSteps(feature, [ subamrineSteps ]);
-
-
+autoBindSteps(feature, [submarineSteps]);
