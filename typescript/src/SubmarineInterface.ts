@@ -1,9 +1,9 @@
 export interface SubmarineInterface {
-    executeCommand(command: string): void;
+  executeCommand: (command: string) => void
 
-    aim(): number;
+  aim: () => number
 
-    position(): number;
+  position: () => number
 
-    depth(): number;
+  depth: () => number
 }
